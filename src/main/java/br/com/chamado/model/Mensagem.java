@@ -1,7 +1,10 @@
-package br.com.chamado.Util;
+package br.com.chamado.model;
+
+
 // Generated 04/12/2015 13:53:59 by Hibernate Tools 4.3.1
 
 
+import br.com.chamado.model.Usuario;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;

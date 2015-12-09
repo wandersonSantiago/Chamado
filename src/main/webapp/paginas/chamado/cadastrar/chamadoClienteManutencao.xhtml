@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+
+        <title>Chamado</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/paginas/template.xhtml" >
+            <ui:define name="centro">
+
+                <h:form>
+                    <h3>
+                        Chamado Manutenção
+                    </h3>
+
+                    <div>
+                        <h:outputLabel value="Titulo:"/>
+                    </div>
+                    <div>
+                        <p:inputText id="titulo" />
+                    </div>
+                    <p:separator/>
+                    <div>
+                        <h:outputLabel value="Mensagem:" />
+                    </div>
+                    <div>
+                        <p:inputTextarea id="mensagem" style="min-width: 500px; min-height: 300px" />
+                    </div>
+                    <p:separator/>
+                    <p:fileUpload   dragDropSupport="false"
+                                    update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+
+                    <p:growl id="messages" showDetail="true" />
+
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

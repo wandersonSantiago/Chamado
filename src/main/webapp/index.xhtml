@@ -1,36 +1,46 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      >
-    <link href="css/estilo.css" rel='estilos' type='text/css' />
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <script type="text/javascript" src="js/login.js"></script>
         <title>Loja</title>
     </h:head>
-    <h:body>
+    <h:body onload="PF('dlg').show();" style="background: royalblue">
 
-        <h:form>
-            <table id="tabelaSup">
-                <td>
-                    <h1>
-                        Sistema de cadastro
+        <center>
+            <h:form>
+                
+                <h1 style="color: white; font-size: 90px; font-family: cursive" >
+                    Sistema de Chamados
+                </h1>
+                <p:growl id="painelLogin" sticky="true" showDetail="true" life="3000" />
 
-                    </h1>
-                </td>
-                <td >
-                    <p:commandButton style="background-position: right" value="Area restrita" action="login.xhtml" />
-                </td>
-            </table>
-            <div  class="texto" style="background: darkgrey" draggable="true" >
-                <img src="images/slidetercafeirao.jpg" width="962" height="251" alt="slidetercafeirao"/>
-            </div>
-            <div class="texto2" style="background: beige">
-                <img src="images/slidequartacarnes-des.jpg" width="962" height="251" alt="slidequartacarnes-des"/>
-            </div>
+                <p:dialog header="Login" widgetVar="dlg" resizable="false">
 
-        </h:form>	    
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputLabel for="usuario" value="Usuario:" />
+                        <p:inputText id="usuario"  style="min-width: 250px" required="true" label="username" />
+
+                        <h:outputLabel for="senha" value="Senha:" />
+                        <p:password id="senha"  style="min-width: 250px" required="true" label="password" />
+
+                        <f:facet name="footer">
+                            <p:commandButton value="Login" style="min-width: 335px" update="painelLogin" 
+                                             oncomplete="handleLoginRequest(xhr, status, args)">
+
+ 
+                            </p:commandButton>
+                        </f:facet>  
+
+                    </h:panelGrid>
+                </p:dialog>
+            </h:form>
+
+        </center>
     </h:body>
 </html>
 

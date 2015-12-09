@@ -104,5 +104,11 @@
             <layout>default</layout>
             <name>Repository for library PrimeFaces-maven-lib</name>
         </repository>
+       
+            <repository>
+                <id>repository-id</id>
+                <url>http://repository.primefaces.org/</url>
+            </repository>
+        
     </repositories>
 </project>

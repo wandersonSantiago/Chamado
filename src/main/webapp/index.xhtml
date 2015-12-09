@@ -1,30 +1,36 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
+    <link href="css/estilo.css" rel='estilos' type='text/css' />
     <h:head>
-        <title>Facelet Title</title>
+        <title>Loja</title>
     </h:head>
-  <h:body>
-        <h:form>          
-            <div class="ui-grid ui-grid" style="background: black">
-                <div class="ui-grid-row" style="background: white">
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                    <div class="ui-grid-col-1">1</div>
-                </div>
+    <h:body>
+
+        <h:form>
+            <table id="tabelaSup">
+                <td>
+                    <h1>
+                        Sistema de cadastro
+
+                    </h1>
+                </td>
+                <td >
+                    <p:commandButton style="background-position: right" value="Area restrita" action="login.xhtml" />
+                </td>
+            </table>
+            <div  class="texto" style="background: darkgrey" draggable="true" >
+                <img src="images/slidetercafeirao.jpg" width="962" height="251" alt="slidetercafeirao"/>
+            </div>
+            <div class="texto2" style="background: beige">
+                <img src="images/slidequartacarnes-des.jpg" width="962" height="251" alt="slidequartacarnes-des"/>
             </div>
 
-        </h:form>
+        </h:form>	    
     </h:body>
 </html>
 

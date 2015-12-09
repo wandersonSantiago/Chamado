@@ -27,6 +27,7 @@ public class Usuario  implements java.io.Serializable {
 
      private int codusuario;
      private Unidade unidade;
+     private String nome;
      private String usuario;
      private String senha;
      private String email;
@@ -37,17 +38,19 @@ public class Usuario  implements java.io.Serializable {
     }
 
 	
-    public Usuario(int codusuario, Unidade unidade, String usuario, String senha, String email, int tipousuario) {
+    public Usuario(int codusuario, Unidade unidade,String nome, String usuario, String senha, String email, int tipousuario) {
         this.codusuario = codusuario;
         this.unidade = unidade;
         this.usuario = usuario;
-        this.senha = senha;
+        this.nome = nome;
+	this.senha = senha;
         this.email = email;
         this.tipousuario = tipousuario;
     }
-    public Usuario(int codusuario, Unidade unidade, String usuario, String senha, String email, int tipousuario, Set mensagems) {
+    public Usuario(int codusuario, Unidade unidade,String nome, String usuario, String senha, String email, int tipousuario, Set mensagems) {
        this.codusuario = codusuario;
        this.unidade = unidade;
+       this.nome = nome;
        this.usuario = usuario;
        this.senha = senha;
        this.email = email;
@@ -61,6 +64,14 @@ public class Usuario  implements java.io.Serializable {
     @Column(name="codusuario", unique=true, nullable=false)
     public int getCodusuario() {
         return this.codusuario;
+    }
+    @Column(name="nome", unique=true, nullable=false)
+    public String getNome() {
+	return nome;
+    }
+
+    public void setNome(String nome) {
+	this.nome = nome;
     }
     
     public void setCodusuario(int codusuario) {

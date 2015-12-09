@@ -13,12 +13,14 @@ and open the template in the editor.
     <h:head>
         <title>Chamado</title>
     </h:head>
-    <h:body style=" background: url">
+    <h:body >
         <h:form>
             <p:toolbar style="background: #1170BE" >
                 <f:facet name="left">
-                    <h:outputLabel id="nome"  value="SISTEMA DE CHAMADO" style="margin-right:10px; color: white"  />
+                    <h:outputLabel id="nome"  value="SISTEMA DE CHAMADO" style="margin-right:10px; color: white; font-size: 25px; font-style: italic; font-family: cursive"  />
                 </f:facet>
+                
+                
                 <f:facet name="right">
                     <p:outputLabel style="margin-right:10px; color: white"   />
                     <p:commandButton style="background: black" value="sair"   ajax="false" icon="ui-icon-extlink" />
@@ -29,21 +31,21 @@ and open the template in the editor.
             <p:layout  style="max-height: 1200px; background: black"  id="layout_principal">
 
 
-                <p:layoutUnit position="west"  style="min-height: 900px; size: 200px; border: white 2px " resizable="true" closable="true" collapsible="true" >
+                <p:layoutUnit position="west"  style="min-height: 900px; size: 200px; border: white 2px " resizable="false" closable="true" collapsible="true" >
 
                     <p:panelMenu style="width:200px;">
 
                         <p:submenu label="INFORMAÇÕES" >
-                            <p:menuitem  value="Contatos/Ramais"  immediate="true" ajax="false"/>
+                            <p:menuitem  value="Contatos/Ramais"   immediate="true" ajax="false"/>
                             <p:menuitem  value="Contatos/Ramais"  immediate="true" ajax="false"/>
                         </p:submenu>
-                        <p:submenu label="SOLICITAÇÕES"  style="width:200px; " >
-                            <p:menuitem value="Chamados-T.I"   immediate="true" ajax="false"  />
-                            <p:menuitem value="O.S.-Manuteção"  immediate="true" ajax="false" />
+                        <p:submenu label="SOLICITAÇÕES"   >
+                            <p:menuitem value="Chamados-T.I" action="/paginas/chamado/cadastrar/chamadoClienteTi.xhtml"  immediate="true" ajax="false"  />
+                            <p:menuitem value="O.S.-Manuteção" action="/paginas/chamado/cadastrar/chamadoClienteManutencao.xhtml" immediate="true" ajax="false" />
                         </p:submenu>       
                         <p:separator />
 
-                        <p:submenu label="PROCEDIMENTOS" >
+                        <p:submenu label="PESQUISAR" >
                             <p:menuitem value="Tec. Informação"  immediate="true" ajax="false" />
                             <p:menuitem value="Manutenção" immediate="true" ajax="false" />
                         </p:submenu>

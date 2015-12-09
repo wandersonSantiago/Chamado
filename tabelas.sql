@@ -69,5 +69,5 @@ CREATE TABLE grupopagina(
    
      codgrupo serial PRIMARY KEY NOT NULL,
      codgrupo INTEGER NOT NULL REFERENCES grupo(codgrupo),
-     codpaigna INTEGER NOT NULL REFERENCES paginas(codpagina)); 
+     codpaigna INTEGER NOT NULL REFERENCES pagina(codpagina)); 
      

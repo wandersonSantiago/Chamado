@@ -62,7 +62,7 @@ CREATE TABLE grupo(
 
 CREATE TABLE pagina(
    
-   codpaigna serial PRIMARY KEY NOT NULL,
+   codpagina serial PRIMARY KEY NOT NULL,
    nomepagina VARCHAR(30) NOT NULL);
 
 CREATE TABLE grupopagina(

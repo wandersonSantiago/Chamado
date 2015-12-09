@@ -36,12 +36,12 @@ public class CtrGrupoPagina {
 	}
     }
 
-    public boolean alterarGrupopagina(GrupoPagina grupoPagina) {
+    public String alterarGrupopagina(GrupoPagina grupoPagina) {
 	try {
             acessoHibernate.alterar(grupoPagina);
-	    return true;
+	    return "";
 	} catch (HibernateException e) {
-	    return false;
+	    return "falha";
 	}
 
     }

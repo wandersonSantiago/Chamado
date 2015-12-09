@@ -38,12 +38,12 @@ public class CtrGrupo {
 	}
     }
 
-    public boolean alterarGrupo(Grupo grupo) {
+    public String alterarGrupo(Grupo grupo) {
 	try {
 
-	    return true;
+	    return "";
 	} catch (HibernateException e) {
-	    return false;
+	    return "falaha";
 	}
 
     }

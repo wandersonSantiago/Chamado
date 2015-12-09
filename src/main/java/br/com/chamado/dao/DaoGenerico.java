@@ -13,7 +13,7 @@ package br.com.chamado.dao;
  */
 
 
-import br.com.chamado.Util.HibernateConfiguracao;
+import br.com.chamado.util.HibernateConfiguracao;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;

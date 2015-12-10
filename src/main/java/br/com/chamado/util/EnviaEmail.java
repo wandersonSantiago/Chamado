@@ -1,56 +1,39 @@
 package br.com.chamado.util;
 
-import br.com.chamado.model.Usuario;
-//import org.apache.commons.mail.DefaultAuthenticator;
-//import org.apache.commons.mail.Email;
-//import org.apache.commons.mail.EmailException;
-//import org.apache.commons.mail.SimpleEmail;
+
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
+
 
 public class EnviaEmail {
 
-  //  private Email email;
-    static final String host = "smtp.mail.yahoo.com.br";
-    static final String porta = "465";
-    static final String usuario = "eduardoferrari865@yahoo.com.br";
-    static final String senha = "senha123";
+    // gmail 
+    static final String host = "";
+    static final String porta = "";
+    static final String usuario = "";
+    static final String senha = "";
     static final String emailDe = "eduardoferrari865@yahoo.com.br";
-    static final String assunto = "Recuperação de Senha";
-    private static EnviaEmail instance;
+    static final String assunto = "Novo Chamado";
+ 
+   
+    private EnviaEmail() throws EmailException {
 
-    private EnviaEmail() {
-
-/*	email = new SimpleEmail();
-	email.setHostName(host);
-	email.setSslSmtpPort(porta);
-	email.setAuthenticator(new DefaultAuthenticator(usuario, senha));
-	email.setStartTLSEnabled(true);
-	try {
-	    email.setFrom(emailDe);
-	    email.setSubject(assunto);
-	} catch (EmailException e) {
-	    System.out.println(e.getLocalizedMessage());
-	} */
-    }
-
-    public static EnviaEmail getInstance() {
-	if (instance == null) {
-	    instance = new EnviaEmail();
-	}
-	return instance;
-    }
-
-    public void enviar(Usuario usuario) {
-
-	/*
-	try {
-
-	    this.email.setMsg("Olá " + usuario.getEmail() + " a sua nova senha é:" + usuario.getSenha());
-	    this.email.addTo(usuario.getEmail());
-	    this.email.send();
-
-	} catch (EmailException e) {
-	    e.printStackTrace();
-	}*/
+        SimpleEmail email = new SimpleEmail();  
+        email.setHostName(host);
+	email.addTo(emailDe,"Jose");
+	email.setFrom(usuario,"Lucas");
+	email.setSubject("Teste email simples");
+	email.setMsg("Teste de Email utilizando commons-email"); //conteudo do e-mail  
+        email.setAuthentication(usuario,senha);  
+        email.setSmtpPort(465);  
+        email.setSSLOnConnect(true);
+	//email.setSSL(true);  
+         email.setStartTLSRequired(true);
+	//email.setTLS(true);  
+         email.send();  
 	
+
     }
+
+    
 }

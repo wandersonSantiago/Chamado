@@ -22,7 +22,7 @@ and open the template in the editor.
                     <h:form>
                         <p:panel id="painelColaborador" header="Lista de Chamados Tecnologia da Informação" style="border: 0px; " >
 
-                            <p:dataTable  value="#{ctrChamado.carregarChamado}" var="chamado" id="tabela" widgetVar="table" 
+                            <p:dataTable  value="#{ctrChamado.carregarChamado()}" var="chamado" id="tabela" widgetVar="table" 
                                          paginator="true" rows="10" style="margin-bottom:20px" rowsPerPageTemplate="5,10,15,20,25,30">
                                 <p:column  style="max-height: 8px" >
                                     <f:facet name="header">

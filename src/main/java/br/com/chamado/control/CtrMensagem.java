@@ -47,7 +47,7 @@ public class CtrMensagem {
   public List carregarMensagem() {
 	try {
 
-	    return acessoHibernate.carregaTudoOrdernado(Mensagem.class, "nome");
+	    return acessoHibernate.carregaTudoOrdernado(Mensagem.class, "nummensagem");
 	} catch (HibernateException e) {
 	    return null;
 	}

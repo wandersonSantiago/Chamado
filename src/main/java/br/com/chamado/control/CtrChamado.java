@@ -56,4 +56,15 @@ public class CtrChamado {
         return null;
       }
     }
+
+    public Chamadoc getChamadoc() {
+	return chamadoc;
+    }
+
+    public void setChamadoc(Chamadoc chamadoc) {
+	this.chamadoc = chamadoc;
+    }
+
+   
+    
 }

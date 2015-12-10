@@ -50,7 +50,7 @@ public class CtrChamado {
       try
       {
 	  
-	 return acessoHibernate.carregaTudoOrdernado(Chamadoc.class, "nome");
+	 return acessoHibernate.carregaTudoOrdernado(Chamadoc.class, "numchamado");
       }catch(HibernateException e)
       {
         return null;

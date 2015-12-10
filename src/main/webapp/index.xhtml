@@ -23,13 +23,13 @@
 
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel for="usuario" value="Usuario:" />
-                        <p:inputText id="usuario"  style="min-width: 250px" required="true" label="username" />
+                        <p:inputText id="usuario"  style="min-width: 250px" required="false" label="username" />
 
                         <h:outputLabel for="senha" value="Senha:" />
-                        <p:password id="senha"  style="min-width: 250px" required="true" label="password" />
+                        <p:password id="senha"  style="min-width: 250px" required="false" label="password" />
 
                         <f:facet name="footer">
-                            <p:commandButton value="Login" style="min-width: 335px" update="painelLogin" 
+                            <p:commandButton value="Login" action="/paginas/template.xhtml" style="min-width: 335px" update="painelLogin" 
                                              oncomplete="handleLoginRequest(xhr, status, args)">
 
  

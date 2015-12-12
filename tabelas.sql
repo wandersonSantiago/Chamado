@@ -71,3 +71,14 @@ CREATE TABLE grupopagina(
      codgrupo INTEGER NOT NULL REFERENCES grupo(codgrupo),
      codpaigna INTEGER NOT NULL REFERENCES pagina(codpagina)); 
      
+CREATE TABLE confemail(
+ 
+  codemail serial PRIMARY KEY NOT NULL,
+  host VARCHAR(30) NOT NULL,
+  usuarioemail VARCHAR(30) NOT NULL ,
+  senhaemail VARCHAR(30) NOT NULL,
+  porta INTEGER NOT NULL,
+  ssl  BOOLEAN,  
+  tls  BOOLEAN,
+  msgfrom VARCHAR(10));
+  

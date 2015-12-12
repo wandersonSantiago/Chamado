@@ -74,8 +74,6 @@ CREATE TABLE grupopagina(
 CREATE TABLE confemail(
  
   codemail serial PRIMARY KEY NOT NULL,
-  unidade INTEGER NOT NULL 
-  REFERENCES unidade(codunidade),
   host VARCHAR(30) NOT NULL,
   usuarioemail VARCHAR(30) NOT NULL ,
   senhaemail VARCHAR(30) NOT NULL,

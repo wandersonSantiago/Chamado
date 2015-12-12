@@ -1,39 +1,57 @@
 package br.com.chamado.util;
 
-
+import br.com.chamado.model.EmailConfig;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
 
 public class EnviaEmail {
 
-    // gmail 
-    static final String host = "";
-    static final String porta = "";
-    static final String usuario = "";
-    static final String senha = "";
-    static final String emailDe = "eduardoferrari865@yahoo.com.br";
-    static final String assunto = "Novo Chamado";
- 
+    private static EmailConfig config;
+    private static EnviaEmail instancia = null;
    
-    private EnviaEmail() throws EmailException {
-
-        SimpleEmail email = new SimpleEmail();  
-        email.setHostName(host);
-	email.addTo(emailDe,"Jose");
-	email.setFrom(usuario,"Lucas");
-	email.setSubject("Teste email simples");
-	email.setMsg("Teste de Email utilizando commons-email"); //conteudo do e-mail  
-        email.setAuthentication(usuario,senha);  
-        email.setSmtpPort(465);  
-        email.setSSLOnConnect(true);
-	//email.setSSL(true);  
-         email.setStartTLSRequired(true);
-	//email.setTLS(true);  
-         email.send();  
-	
-
+    private  String emailDe = "";
+    private  String assunto = "";
+    private  String msg = "";
+   
+    private EnviaEmail()
+    {
+    }
+    public static EnviaEmail getInstancia() 
+    {
+      
+       if(instancia == null)
+       {
+         instancia = new EnviaEmail();
+ 	 config = EmailConfig.getInstancia();
+       }
+       return instancia;
     }
 
+   public void setEmailDe(String emailDe) {
+	this.emailDe = emailDe;
+    }  
+    public void setAssunto(String assunto) {
+	this.assunto = assunto;
+    }
+
+  
+    public void setMsg(String msg) {
+	this.msg = msg;
+    }
     
+    public  synchronized  void enviar()  throws EmailException
+    {
+        SimpleEmail email = new SimpleEmail(); 
+	email.setHostName(config.getHost());
+	email.setAuthentication(config.getUsuario(),config.getSenha());  
+        email.setSmtpPort(config.getPorta());  
+        email.setSSLOnConnect(config.isSsl());
+	email.setStartTLSRequired(config.isTls());
+	email.addTo(emailDe,"Teste");
+	email.setFrom(config.getUsuario(),config.getMsgFrom());
+	email.setSubject(assunto);
+	email.setMsg(msg);
+        email.send();
+	}
 }

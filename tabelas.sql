@@ -81,5 +81,6 @@ CREATE TABLE confemail(
   senhaemail VARCHAR(30) NOT NULL,
   porta INTEGER NOT NULL,
   ssl  BOOLEAN,  
-  tls  BOOLEAN );
+  tls  BOOLEAN,
+  msgfrom VARCHAR(10));
   

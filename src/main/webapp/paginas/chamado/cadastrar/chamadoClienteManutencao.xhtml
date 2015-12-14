@@ -27,21 +27,35 @@ and open the template in the editor.
                         <h:outputLabel value="Titulo:"/>
                     </div>
                     <div>
-                        <p:inputText id="titulo" />
+                        <p:inputText id="titulo" value="#{chamadoc.titulo}" />
                     </div>
                     <p:separator/>
                     <div>
                         <h:outputLabel value="Mensagem:" />
                     </div>
                     <div>
-                        <p:inputTextarea id="mensagem" style="min-width: 500px; min-height: 300px" />
+                        <p:inputTextarea id="mensagem" style="min-width: 500px; min-height: 300px"  />
                     </div>
                     <p:separator/>
-                    <p:fileUpload   dragDropSupport="false"
-                                    update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
-
-                    <p:growl id="messages" showDetail="true" />
-
+                    <div>
+                        <p:outputLabel value="Prioridade:"/>
+                    </div>
+                    <div>
+                        <p:selectOneMenu id="prioridade" label="priori"  
+                                         required="false" requiredMessage="Campo prioridade obrigatorio" >
+                            <f:selectItem itemLabel="Selecione Prioridade" itemValue="" noSelectionOption="true" />
+                            <f:selectItem itemLabel="Urgente" itemValue="Urgente" />
+                            <f:selectItem itemLabel="Media" itemValue="Media" />
+                            <f:selectItem itemLabel="Baixa" itemValue="Baixa" />
+                        </p:selectOneMenu>
+                    </div>
+                    <p:separator/>
+                    <h:panelGrid columns="2" > 
+                        <p:commandButton value="Enviar" action="#{ctrChamado.gravarChamado}" ajax="false">
+                            <f:setPropertyActionListener value="#{chamadoc}" target="#{ctrChamado.gravarChamado}" />
+                        </p:commandButton>
+                        <p:commandButton value="Cancelar" />
+                    </h:panelGrid>
                 </h:form>
             </ui:define>
         </ui:composition>

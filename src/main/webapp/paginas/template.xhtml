@@ -19,8 +19,8 @@ and open the template in the editor.
                 <f:facet name="left">
                     <h:outputLabel id="nome"  value="SISTEMA DE CHAMADO" style="margin-right:10px; color: white; font-size: 25px; font-style: italic; font-family: cursive"  />
                 </f:facet>
-                
-                
+
+
                 <f:facet name="right">
                     <p:outputLabel style="margin-right:10px; color: white"   />
                     <p:commandButton style="background: black" value="sair"   ajax="false" icon="ui-icon-extlink" />
@@ -47,20 +47,22 @@ and open the template in the editor.
 
                         <p:submenu label="PESQUISAR" >
                             <p:menuitem value="Tec. Informação" action="/paginas/chamado/lista/listaChamadoTi.xhtml" immediate="true" ajax="false" />
-                            <p:menuitem value="Manutenção" immediate="true" ajax="false" />
+                            <p:menuitem value="Manutenção" action="/paginas/chamado/lista/listaChamadoManutencao.xhtml" immediate="true" ajax="false" />
                         </p:submenu>
                         <p:separator/>
-                        <p:submenu label="USUARIO">
+                        <p:submenu label="ADMINISTRADOR">
+                            <p:submenu label="Usuarios" style="background-color: white">
+                                <p:menuitem value="cadastrar" immediate="true" action="/paginas/chamado/administrador/usuarios/cadastrarUsuarios.xhtml" ajax="false"/>
+                                <p:menuitem value="listar" immediate="true" action="/paginas/chamado/administrador/usuarios/listarUsuarios.xhtml" ajax="false"/>
+                            </p:submenu>
+                            <p:submenu label="Configurações" style="background-color: white" >
+                                <p:menuitem value="Servidor Email" action="/paginas/chamado/config/configuracao.xhtml" immediate="true" ajax="false" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:separator/>
 
-                            <p:menuitem value="alterar senha" immediate="true"/>
-                        </p:submenu>
                         <p:separator/>
-			
-			<p:separator/>
-                        <p:submenu label="CONFIGURAÇÕES">
-                             <p:menuitem value="Servidor Email" action="/paginas/chamado/config/configuracao.xhtml" immediate="true" ajax="false" />
-			</p:submenu>
-                        <p:separator/>
+
                         <p:submenu label="AJUDA">
                         </p:submenu>
                         <p:submenu label="SAIR">

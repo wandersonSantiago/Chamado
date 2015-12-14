@@ -27,7 +27,7 @@ public class CtrChamado {
     public String gravarChamado() {
 	try {
 	    acessoHibernate.salvar(chamadoc);
-	    return "";
+	    return "index";
 	} catch (HibernateException e) {
 	    return "falha";
 	}
